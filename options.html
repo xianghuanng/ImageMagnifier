@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片放大器 - 设置</title>
+  <style>
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #2196F3;
+      margin-bottom: 30px;
+    }
+    .option-group {
+      margin-bottom: 25px;
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .option-group h2 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    .range-value {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+    }
+    .color-preview {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ccc;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+    button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+    }
+    button:hover {
+      background-color: #0b7dda;
+    }
+    .status {
+      text-align: center;
+      color: #4CAF50;
+      font-weight: bold;
+      height: 20px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>图片放大器 - 设置</h1>
+  
+  <div class="option-group">
+    <h2>放大窗口设置</h2>
+    <label>
+      <input type="checkbox" id="auto-size" checked>
+      自动调整大小（显示图片原始尺寸）
+    </label>
+  </div>
+  
+  <div class="option-group">
+    <h2>外观设置</h2>
+    <label>
+      边框颜色：
+      <input type="color" id="border-color" value="#ffffff">
+      <span class="color-preview" id="border-preview" style="background-color: #ffffff;"></span>
+    </label>
+    <label>
+      边框宽度：
+      <input type="range" id="border-width" min="1" max="10" step="1" value="3">
+      <span class="range-value" id="border-width-value">3px</span>
+    </label>
+  </div>
+  
+  <div class="option-group">
+    <h2>功能设置</h2>
+    <label>
+      <input type="checkbox" id="show-linked-media" checked>
+      显示链接中的图像/视频（当鼠标悬停在缩略图上时）
+    </label>
+  </div>
+  
+  <button id="save-button">保存设置</button>
+  <div class="status" id="status-message"></div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

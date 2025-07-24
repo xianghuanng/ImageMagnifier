@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片放大器</title>
+  <style>
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      width: 250px;
+      padding: 15px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 18px;
+      color: #2196F3;
+      margin-top: 0;
+      text-align: center;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .status-indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      margin-right: 10px;
+    }
+    .status-text {
+      font-size: 14px;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #0b7dda;
+    }
+    .info {
+      font-size: 12px;
+      color: #666;
+      margin-top: 15px;
+      text-align: center;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .logo img {
+      width: 48px;
+      height: 48px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="images/icon48.png" alt="图片放大器图标">
+  </div>
+  
+  <h1>图片放大器</h1>
+  
+  <div class="status">
+    <div class="status-indicator"></div>
+    <div class="status-text">放大器已启用</div>
+  </div>
+  
+  <div class="button-container">
+    <button id="settings-button">打开设置</button>
+    <button id="test-button">使用说明</button>
+  </div>
+  
+  <div class="info">
+    将鼠标悬停在网页图片上即可查看放大效果
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

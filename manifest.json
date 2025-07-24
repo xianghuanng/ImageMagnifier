@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ImageMagnifier",
+  "version": "1.0",
+  "description": "图片放大器，当鼠标移动到网页图片上时，自动放大预览当前的照片",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background-install.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": ["activeTab", "storage", "tabs"],
+  "web_accessible_resources": [{
+    "resources": ["*.html", "*.js", "*.css", "images/*"],
+    "matches": ["<all_urls>"]
+  }]
+}
